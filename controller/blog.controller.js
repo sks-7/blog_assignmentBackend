@@ -135,7 +135,7 @@ blogsRouter.delete('/delete-blogs/delete/:id', authenticateToken, async (req, re
 
 // like pots
 
-blogsRouter.post('/blogs/like/:id',authenticateToken, async (req, res) => {
+blogsRouter.get('/blogs/like/:id',authenticateToken, async (req, res) => {
   console.log(req.user);
   try {
     const post = await blogModel.findById(req.params.id);
